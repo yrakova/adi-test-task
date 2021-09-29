@@ -1,0 +1,10 @@
+.vscode/
+node_modules/
+build
+dist
+*.tgz
+**/__snapshots__/
+*.log*
+/.changelog
+.npm/
+coverage/
