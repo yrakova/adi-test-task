@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:json/recommended",
+    "eslint-config-postcss"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "max-len": ["error", 120],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/button-has-type": "warn",
+    "import/prefer-default-export": "warn",
+    "import/no-extraneous-dependencies": "warn",
+    "global-require": "warn",
+    "node/global-require": "off",
+    "node/no-unpublished-require": "off"
+  }
+}

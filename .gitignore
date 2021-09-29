@@ -8,3 +8,4 @@ dist
 /.changelog
 .npm/
 coverage/
+.eslintcache

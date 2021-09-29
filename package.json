@@ -1,0 +1,66 @@
+{
+  "name": "adi-test-task",
+  "version": "1.0.0",
+  "description": "ADI-MARS Opportunity Test Assignment",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/ --open",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack/",
+    "lint": "eslint ./src/**/*.{js,jsx,json}",
+    "lint:fix": "eslint ./src/**/*.{js,jsx,json} --quiet --fix",
+    "prettify": "prettier . --write",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yrakova/adi-test-task.git"
+  },
+  "author": "Yulia Rakova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yrakova/adi-test-task/issues"
+  },
+  "homepage": "https://github.com/yrakova/adi-test-task#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^10.3.6",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-postcss": "^4.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "postcss-cli": "^9.0.1",
+    "postcss-loader": "^6.1.1",
+    "prettier": "2.4.0",
+    "style-loader": "^3.3.0",
+    "tailwindcss": "^2.2.16",
+    "webpack": "^5.55.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.{js,jsx,json}": "eslint --cache --fix"
+  }
+}
