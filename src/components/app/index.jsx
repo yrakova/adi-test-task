@@ -1,3 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-export const App = () => <button className="btn btn-blue">Click me</button>;
+import Home from '../../pages/home';
+
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/login" exact>
+        Login Page
+      </Route>
+      <Route path="*">404 Page not found</Route>
+    </Switch>
+  </BrowserRouter>
+);
+
+export default App;

@@ -26,6 +26,7 @@
     "import/no-extraneous-dependencies": "warn",
     "global-require": "warn",
     "node/global-require": "off",
-    "node/no-unpublished-require": "off"
+    "node/no-unpublished-require": "off",
+    "react/prop-types": "warn"
   }
 }

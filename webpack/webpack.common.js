@@ -14,6 +14,9 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
+    alias: {
+      '~': src,
+    },
     extensions: ['.js', '.jsx'],
   },
   module: {
@@ -29,6 +32,18 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+            },
+          },
+        ],
       },
     ],
   },

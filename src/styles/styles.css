@@ -15,3 +15,19 @@
 .btn-blue:hover {
   @apply bg-blue-700;
 }
+
+header {
+  @apply text-gray-600 font-openSans;
+}
+
+nav {
+  @apply md:ml-auto flex flex-wrap items-center text-xl justify-center;
+}
+
+a {
+  @apply mr-5 hover:text-gray-400;
+}
+
+.top-nav-bar nav {
+  @apply text-3xl justify-end;
+}
