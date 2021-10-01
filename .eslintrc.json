@@ -34,6 +34,8 @@
     "prefer-let/prefer-let": "off",
     "no-plusplus": "off",
     "no-unused-vars": "warn",
-    "unicorn/no-unused-properties": "warn"
+    "unicorn/no-unused-properties": "warn",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "jsx-a11y/click-events-have-key-events": "off"
   }
 }

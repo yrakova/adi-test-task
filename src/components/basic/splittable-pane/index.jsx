@@ -9,29 +9,29 @@ export const PANE_VIEW_STATES = {
 };
 
 const SplittablePane = ({ children, viewState }) => {
-  let classNames = 'border-2 h-full';
-  switch (viewState) {
-    case PANE_VIEW_STATES.COLLAPSED:
-      classNames = classNames.concat(' w-1');
-      break;
-    case PANE_VIEW_STATES.SPLIT_MORE:
-      classNames = classNames.concat(' w-3/4');
-      break;
-    case PANE_VIEW_STATES.SPLIT_LESS:
-      classNames = classNames.concat(' w-1/4');
-      break;
-    case PANE_VIEW_STATES.FULL:
-      classNames = classNames.concat(' w-full');
-      break;
-    default:
-      throw new Error(
-        `Unknown viewState ${viewState}, while any of ${Object.values(
-          PANE_VIEW_STATES
-        )} is expected`
-      );
-  }
+  const getClassNames = () => {
+    let classNames = 'border-2 h-auto';
+    switch (viewState) {
+      case PANE_VIEW_STATES.COLLAPSED:
+        return classNames.concat(' w-12 bg-gray-200');
+      case PANE_VIEW_STATES.SPLIT_MORE:
+        return classNames.concat(' w-3/4');
+      case PANE_VIEW_STATES.SPLIT_LESS:
+        return classNames.concat(' w-1/4');
+      case PANE_VIEW_STATES.FULL:
+        return classNames.concat(' w-full');
+      default:
+        throw new Error(
+          `Unknown viewState ${viewState}, while any of ${Object.values(
+            PANE_VIEW_STATES
+          )} is expected`
+        );
+    }
+  };
 
-  return <div className={classNames}>{children}</div>;
+  const showChildren = viewState !== PANE_VIEW_STATES.COLLAPSED;
+
+  return <div className={getClassNames()}>{showChildren && children}</div>;
 };
 
 SplittablePane.propTypes = {
