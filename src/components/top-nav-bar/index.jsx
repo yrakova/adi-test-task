@@ -1,6 +1,7 @@
 import React from 'react';
 
-import NavBar from '../nav-bar';
+import NavBar from '../basic/nav-bar';
+import './styles.css';
 
 const topMenuItems = [
   { label: 'Topic 1', link: '/' },
@@ -10,9 +11,9 @@ const topMenuItems = [
 ];
 
 const TopNavBar = () => (
-  <span className="top-nav-bar">
+  <div className="top-nav-bar">
     <NavBar menuItems={topMenuItems} />
-  </span>
+  </div>
 );
 
 export default TopNavBar;

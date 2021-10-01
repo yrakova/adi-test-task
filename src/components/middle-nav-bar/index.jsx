@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBar from '../nav-bar';
+import NavBar from '../basic/nav-bar';
 
 const topMenuItems = [
   { label: 'Section 1', link: '/' },
