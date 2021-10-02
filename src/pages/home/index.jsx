@@ -7,12 +7,8 @@ import MiddleNavBar from '../../components/middle-nav-bar';
 const Home = () => (
   <>
     <Header />
-    <section>
-      <MiddleNavBar />
-    </section>
-    <section>
-      <Dashboard />
-    </section>
+    <MiddleNavBar />
+    <Dashboard />
   </>
 );
 

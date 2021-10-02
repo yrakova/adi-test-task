@@ -10,9 +10,9 @@ const topMenuItems = [
 ];
 
 const MiddleNavBar = () => (
-  <span className="middle-nav-bar">
+  <div className="middle-container">
     <NavBar menuItems={topMenuItems} />
-  </span>
+  </div>
 );
 
 export default MiddleNavBar;

@@ -15,7 +15,7 @@ const generateProducts = () => {
   const products = [];
   for (let i = 0; i < 50; i++) {
     products.push({
-      id: i.toString(10),
+      id: (i + 1).toString(10),
       imgSrc: 'https://dummyimage.com/200x200',
     });
   }
@@ -103,7 +103,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex justify-between">
+    <div className="dashboard-container flex justify-between overflow-hidden space-x-1 p-1">
       <SplittablePane viewState={getTablePaneState()}>
         <TableContent
           products={PRODUCTS}

@@ -14,12 +14,10 @@ const TableContent = ({ products, columnsCount }) => {
     chunkedProducts.map((rowProducts) => renderTableRow(rowProducts));
 
   const renderTableColumn = (product) => (
-    <td key={product.id}>
-      <img
-        alt="gallery"
-        className="w-48 h-48 object-cover object-center"
-        src={product.imgSrc}
-      />
+    <td className="border-1 border-gray-900 p-1" key={product.id}>
+      <div className="w-full h-24 border-2 rounded-md bg-gray-200 flex justify-center items-center">
+        <p className="text-5xl">{product.id}</p>
+      </div>
     </td>
   );
 
@@ -30,7 +28,7 @@ const TableContent = ({ products, columnsCount }) => {
   );
 
   return (
-    <table>
+    <table className="w-full">
       <tbody>{renderTableData()}</tbody>
     </table>
   );

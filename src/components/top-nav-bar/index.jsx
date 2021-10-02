@@ -1,7 +1,6 @@
 import React from 'react';
 
 import NavBar from '../basic/nav-bar';
-import './styles.css';
 
 const topMenuItems = [
   { label: 'Topic 1', link: '/' },

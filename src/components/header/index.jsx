@@ -4,7 +4,7 @@ import ICONS from '../../assets';
 import TopNavBar from '../top-nav-bar';
 
 const Header = () => (
-  <div className="bg-gray-200">
+  <div className="header-container bg-gray-200">
     <header className="flex">
       <div className="p-2">
         <img

@@ -16,7 +16,7 @@ const Toggler = ({ state, onTogglerClickLeft, onTogglerClickRight }) => {
     state === TOGGLER_STATE.BOTH || state === TOGGLER_STATE.RIGHT;
 
   return (
-    <div className="w-12 h-auto border-2 border-dashed bg-gray-100 flex flex-col items-center space-y-2">
+    <div className="w-12 h-auto border-2 border-dashed bg-gray-100 flex flex-col items-center justify-center space-y-2">
       {leftIsVisible && (
         <Arrow type={ARROW_TYPE.LEFT} onClick={onTogglerClickLeft} />
       )}

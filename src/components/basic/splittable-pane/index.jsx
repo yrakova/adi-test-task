@@ -10,7 +10,7 @@ export const PANE_VIEW_STATES = {
 
 const SplittablePane = ({ children, viewState }) => {
   const getClassNames = () => {
-    let classNames = 'border-2 h-auto';
+    let classNames = 'border-2 overflow-auto';
     switch (viewState) {
       case PANE_VIEW_STATES.COLLAPSED:
         return classNames.concat(' w-12 bg-gray-200');

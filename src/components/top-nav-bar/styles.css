@@ -1,7 +1,0 @@
-.top-nav-bar {
-  @apply flex w-full justify-items-end;
-}
-
-.top-nav-bar nav {
-  @apply text-2xl;
-}

@@ -25,3 +25,27 @@ a {
 article {
   text-indent: 2rem;
 }
+
+#app {
+  @apply block;
+}
+
+.header-container {
+  @apply h-header;
+}
+
+.middle-container {
+  @apply h-middle;
+}
+
+.dashboard-container {
+  height: calc(100vh - theme('height.header') - theme('height.middle'));
+}
+
+.top-nav-bar {
+  @apply flex w-full justify-items-end;
+}
+
+.top-nav-bar nav {
+  @apply text-2xl;
+}
