@@ -1,50 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import generateChunks from '../utils/generate-chunks';
-
-const TableContent = ({ products, columnsCount }) => {
-  const [chunkedProducts, setChunkedProducts] = React.useState([]);
-
-  React.useEffect(() => {
-    setChunkedProducts(generateChunks(products, columnsCount));
-  }, [products, columnsCount]);
-
-  const renderTableData = () =>
-    chunkedProducts.map((rowProducts) => renderTableRow(rowProducts));
-
-  const renderTableColumn = (product) => (
-    <td className="border-1 border-gray-900 p-1" key={product.id}>
-      <div className="w-full h-24 border-2 rounded-md bg-gray-200 flex justify-center items-center">
-        <p className="text-5xl">{product.id}</p>
-      </div>
-    </td>
-  );
-
-  const renderTableRow = (rowProducts) => (
-    <tr key={rowProducts.map(({ id }) => id).join(' ')}>
-      {rowProducts.map((product) => renderTableColumn(product))}
-    </tr>
-  );
+const TableContent = ({ items, columnsList }) => {
+  const renderTableData = () => {
+    const columnNames = [...columnsList];
+    return items.map((item) => {
+      const { email: id } = item;
+      return (
+        <tr key={id}>
+          {columnNames.map((columnName) => {
+            const { [columnName]: value } = item;
+            return <td key={columnName}>{value}</td>;
+          })}
+        </tr>
+      );
+    });
+  };
 
   return (
     <table className="w-full">
+      <thead>
+        <tr>
+          {columnsList.map((title) => (
+            <th key={title}>{title}</th>
+          ))}
+        </tr>
+      </thead>
       <tbody>{renderTableData()}</tbody>
     </table>
   );
 };
 
 TableContent.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({ id: PropTypes.string, imgSrc: PropTypes.string })
-      .isRequired
-  ),
-  columnsCount: PropTypes.number,
+  items: PropTypes.arrayOf(PropTypes.any),
+  columnsList: PropTypes.arrayOf(PropTypes.string),
 };
 
 TableContent.defaultProps = {
-  products: [],
-  columnsCount: 3,
+  items: [],
+  columnsList: [],
 };
 
 export default TableContent;

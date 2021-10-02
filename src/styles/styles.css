@@ -26,6 +26,18 @@ article {
   text-indent: 2rem;
 }
 
+td {
+  @apply border border-gray-400;
+}
+
+th {
+  @apply bg-gray-100 border border-gray-400 uppercase;
+}
+
+table {
+  @apply whitespace-nowrap;
+}
+
 #app {
   @apply block;
 }

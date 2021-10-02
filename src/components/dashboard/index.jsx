@@ -4,6 +4,7 @@ import SplittablePane, { PANE_VIEW_STATES } from '../basic/splittable-pane';
 import TableContent from '../table-content';
 import TextContent from '../text-content';
 import Toggler, { TOGGLER_STATE } from '../toggler/toggler';
+import { users, fullColumns, cutColumns } from '../../services/mock-user-data';
 
 const DASHBOARD_VIEW_STATES = {
   COLLAPSED: 'collapsed',
@@ -11,30 +12,17 @@ const DASHBOARD_VIEW_STATES = {
   FULL: 'full',
 };
 
-const generateProducts = () => {
-  const products = [];
-  for (let i = 0; i < 50; i++) {
-    products.push({
-      id: (i + 1).toString(10),
-      imgSrc: 'https://dummyimage.com/200x200',
-    });
-  }
-  return products;
-};
-
-const PRODUCTS = generateProducts();
-
 const Dashboard = () => {
   let [viewState, setViewState] = React.useState(
     DASHBOARD_VIEW_STATES.COLLAPSED
   );
 
-  const getTableColumnsCount = () => {
+  const getTableColumnsList = () => {
     switch (viewState) {
       case DASHBOARD_VIEW_STATES.FULL:
-        return 6;
+        return fullColumns;
       default:
-        return 3;
+        return cutColumns;
     }
   };
 
@@ -105,10 +93,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container flex justify-between overflow-hidden space-x-1 p-1">
       <SplittablePane viewState={getTablePaneState()}>
-        <TableContent
-          products={PRODUCTS}
-          columnsCount={getTableColumnsCount()}
-        />
+        <TableContent items={users} columnsList={getTableColumnsList()} />
       </SplittablePane>
       <Toggler
         state={getTogglerState()}
