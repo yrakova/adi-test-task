@@ -6,20 +6,21 @@
 
 /* Custom css */
 
-/* * {
-  outline: 1px green solid;
-} */
+body {
+  min-width: 40rem;
+  min-height: 30rem;
+}
 
 header {
   @apply text-gray-600 font-openSans p-2;
 }
 
 nav {
-  @apply md:ml-auto flex flex-wrap items-center text-xl justify-center;
+  @apply md:ml-auto flex flex-wrap items-center text-xl justify-center space-x-8;
 }
 
 a {
-  @apply mr-5 hover:text-gray-400;
+  @apply hover:text-gray-400;
 }
 
 article {
@@ -52,10 +53,6 @@ table {
 
 .dashboard-container {
   height: calc(100vh - theme('height.header') - theme('height.middle'));
-}
-
-.top-nav-bar {
-  @apply flex w-full justify-items-end;
 }
 
 .top-nav-bar nav {

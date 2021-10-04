@@ -13,7 +13,15 @@ const Header = () => (
           alt="Logo"
         />
       </div>
-      <TopNavBar />
+      <div className="w-full flex flex-col space-y-1 items-end px-2">
+        <TopNavBar />
+        <div className="flex">
+          <input placeholder="Search" />
+          <button type="button" className="bg-white">
+            <img src={ICONS.search} alt="search" className="h-7 w-7" />
+          </button>
+        </div>
+      </div>
     </header>
   </div>
 );
